@@ -11,6 +11,6 @@ The plugin looks for the Folgezettel ID in the filename, extracts it, and create
 
 ## Installation of the Plugin
 
-1. Download a zip file on the [release page](https://github.com/faultseeker/new_note_sequence/releases/).
+1. Download a zip file on the [release page](https://github.com/stebackov/new_note_sequence/releases/).
 2. Unzip it.
 3. Double-click on the .thearchiveplugin bundle to install the plugin.
