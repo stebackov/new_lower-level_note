@@ -1,0 +1,32 @@
+{
+  "appVersion" : "1.8.0",
+  "authors" : [
+    {
+      "name" : "Michael Stebackov"
+    }
+  ],
+  "dependencies" : [
+
+  ],
+  "description" : "The plugin creates a new note of the next level in the folgezettel-style naming system.",
+  "identifier" : "me.stebackov.new_note_sequence",
+  "input" : {
+    "notes" : [
+      "all",
+      "selected"
+    ],
+    "pasteboard" : false,
+    "text" : [
+
+    ]
+  },
+  "output" : {
+    "changeFile" : {
+      "programmaticFilename" : true
+    },
+    "onCompletion" : "showFile"
+  },
+  "releaseDate" : "2024-12-25",
+  "title" : "New Note Sequence",
+  "version" : "1.0.0"
+}
