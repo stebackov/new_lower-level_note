@@ -27,7 +27,16 @@ function enumerationCharacter(i) {
     let letters = '';
     
     while (i >= 0) {
-        letters = String.fromCharCode((i % 26) + 97) + letters;
+        
+        if (!(i % 26)) {
+            if (i === 0) {
+                letters += String.fromCharCode(97);
+            } else {
+                letters = String.fromCharCode(25 + 97) + letters;
+            }
+        } else {
+            letters = String.fromCharCode((i % 26) + 97) + letters;
+        }
         i = Math.floor(i / 26) - 1;
     }
     
@@ -35,7 +44,7 @@ function enumerationCharacter(i) {
 }
 
 function retrieveID(filename) {
-    return String(filename.match(/(?<!\S)[0-9]{1,}[,]{0,1}[0-9]+[a-z0-9]{0,}(?!\S)|(?<!\S)[0-9]{1,}(?!\S)/));
+    return String(filename.match(/(?<!\S)[0-9]{1,}(?!\S)|(?<!\S)[0-9]{1,}[,]{0,1}[0-9]+[a-z0-9]{0,}(?!\S)/));
 }
     
 function generateFilename(filename, newLevel = false) {
@@ -62,12 +71,12 @@ function generateFilename(filename, newLevel = false) {
 }
 
 targetFilename = retrieveID(selectedNote.filename);
-    
-if (selectedNotes.length === 1 && !selectedNote.filename.match(/^[A-Za-zА-Яа-я-]{1,}.{0,1}[A-Za-zА-Яа-я-]{0,}[0-9]{0,4}[a-zа-я]{0,}$/) && !selectedNote.filename.match(/^\d{12,14}$/) && !retrieveID(selectedNote.filename).match(/^\d{12,14}$/) && retrieveID(selectedNote.filename) !== 'null') {
+
+if (selectedNotes.length === 1 && selectedNote.filename.includes(targetFilename) && !selectedNote.filename.match(/(?<!\S)[A-ZА-Яa-zа-я-]{1,}.{0,1}[A-ZА-Яa-zа-я]{0,}[0-9]{1,4}[a-zа-я]{0,}(?!\S)/) && !selectedNote.filename.match(/(?<!\S)[0-9]{12,14}(?!\S)/) && !targetFilename.match(/^[0-9]{12,14}$/) && retrieveID(selectedNote.filename) !== 'null') {
     targetFilename = generateFilename(targetFilename, true);
     
     for (const note of allNotes) {
-        if (!note.filename.match(/^[A-Za-zА-Яа-я-]{1,}.{0,1}[A-Za-zА-Яа-я-]{0,}[0-9]{0,4}[a-zа-я]{0,}$/) && !note.filename.match(/^\d{12,14}$/)) {
+        if (!note.filename.match(/(?<!\S)[A-ZА-Яa-zа-я-]{1,}.{0,1}[A-ZА-Яa-zа-я]{0,}[0-9]{1,4}[a-zа-я]{0,}(?!\S)/) && !note.filename.match(/(?<!\S)[0-9]{12,14}(?!\S)/)) {
             while (retrieveID(note.filename) === targetFilename){
                 targetFilename = generateFilename(targetFilename);
             }
