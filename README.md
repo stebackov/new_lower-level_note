@@ -1,8 +1,8 @@
-# The New Note Sequence
+# The New Lower-Level Note Plug-in for The Archive
 
 This is one of two plugins for [The Archive](https://zettelkasten.de/the-archive/) that automate the folgezettel naming convention.
 
-The New Note Sequence plug-in is supposed to work in a Folgezettel-based Zettelkasten.
+The New Lower-Level Note plug-in is supposed to work in a Folgezettel-based Zettelkasten.
 
 The plug-in ignores any occurrences of Citekeys as `Baljeu1974` or Timestamp IDs as `202412291635` in the filenames. It extracts the Folgezettel ID from the selected note’s filename. Then the plug-in compares the extracted ID to the rest ones presented in the filenames to generate the next available Folgezettel ID of the new level related to the one in the selected note’s filename.
 
@@ -30,10 +30,10 @@ In the extreme cases, when the alphabetical part of the existing Folgezettel ID 
 
 ## Plugin Demonstration
 
-![The New Note Sequence Plugin](new_note_sequence.gif)
+![The New Lower-Level Note Plugin](new_lower-level_note.gif)
 
 ## Installation of the Plugin
 
-1. Download a zip file on the [release page](https://github.com/stebackov/new_note_sequence/releases/).
+1. Download a zip file on the [release page](https://github.com/stebackov/new_lower-level_note/releases/).
 2. Unzip it.
 3. Double-click on the .thearchiveplugin bundle to install the plugin.
